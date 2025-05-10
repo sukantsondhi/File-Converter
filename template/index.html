@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>File Converter Web</title>
+    <style>
+      body {
+        font-family: Segoe UI, Arial, sans-serif;
+        background: #f4f6fa;
+        color: #2d415a;
+      }
+      .container {
+        max-width: 900px;
+        margin: 30px auto;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px #0001;
+        padding: 24px;
+      }
+      h1 {
+        color: #2d415a;
+      }
+      .file-list {
+        margin: 16px 0;
+      }
+      .preview {
+        margin: 16px 0;
+      }
+      .preview img {
+        max-width: 320px;
+        max-height: 320px;
+        border: 1px solid #e9eef6;
+        background: #e9eef6;
+      }
+      .footer {
+        color: #8a99b3;
+        margin-top: 32px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>File Converter Web</h1>
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="session_id" value="{{ session_id }}" />
+        <input type="file" name="files" multiple />
+        <button type="submit">Upload Images/PDFs</button>
+      </form>
+      <div class="file-list">
+        <h3>Uploaded Files</h3>
+        <ul>
+          {% for img in images or [] %}
+          <li>
+            <a href="/preview/{{ session_id }}/{{ img }}" target="_blank"
+              >{{ img }}</a
+            >
+          </li>
+          {% endfor %} {% for pdf in pdfs or [] %}
+          <li>
+            <a href="/preview/{{ session_id }}/{{ pdf }}" target="_blank"
+              >{{ pdf }}</a
+            >
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="preview">
+        {% if images %}
+        <h4>Preview (first image):</h4>
+        <img src="/preview/{{ session_id }}/{{ images[0] }}" alt="Preview" />
+        {% elif pdfs %}
+        <h4>Preview (first PDF):</h4>
+        <img src="/preview/{{ session_id }}/{{ pdfs[0] }}" alt="Preview" />
+        {% endif %}
+      </div>
+      <form action="/convert" method="post">
+        <input type="hidden" name="session_id" value="{{ session_id }}" />
+        <label>Output Format:</label>
+        <select name="output_format">
+          <option value="PDF">PDF</option>
+          <option value="JPG">JPG</option>
+          <option value="PNG">PNG</option>
+        </select>
+        <input
+          type="text"
+          name="pdf_name"
+          placeholder="Output PDF name (for merge/images to PDF)"
+        />
+        <button type="submit" name="action" value="images_to_pdf">
+          Images to PDF
+        </button>
+        <button type="submit" name="action" value="convert_images">
+          Convert Images
+        </button>
+        <button type="submit" name="action" value="pdf_to_images">
+          PDF to Images
+        </button>
+        <button type="submit" name="action" value="merge_pdfs">
+          Merge PDFs
+        </button>
+      </form>
+      <div class="footer">Created with ❤️ by Sukant Sondhi</div>
+    </div>
+  </body>
+</html>
