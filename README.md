@@ -1,10 +1,10 @@
-# Sukant Sondhi's File Conversion Tool
+# Image to PDF & File Conversion Tool
 
 A simple GUI tool to convert images (PNG, JPG, HEIC) to PDF or other image formats, and to convert PDF pages to images. Built with Python, Tkinter, and Pillow.
 
 ## Quick Start
 
-**To use the tool, simply [download the latest `.exe` file from the Releases section](https://github.com/yourusername/File-Converter/releases) and run it—no installation required!**
+**[⬇️ Download the latest `.exe` file here](https://github.com/sukantsondhi/File-Converter/blob/main/main.exe) and run it—no installation required!**
 
 > **Note:** If you want to view or modify the source code, switch to the `code` branch on this repository.
 
