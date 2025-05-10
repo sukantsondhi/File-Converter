@@ -124,6 +124,7 @@ def run_gui():
     root = tk.Tk()
     root.title("Sukant Sondhi's File Conversion Tool")
     root.geometry("800x500")
+    root.minsize(650, 400)  # Set minimum window size
     root.configure(bg="#f4f6fa")
 
     output_format = StringVar(value="PDF")
@@ -314,6 +315,11 @@ def run_gui():
         frame, text="Upload PDF", command=upload_pdf, width=btn_width
     )
     upload_pdf_btn.grid(row=1, column=1, sticky="ew", pady=5, padx=(0, 10))
+
+    # Ensure columns 0 and 1 expand equally to keep buttons aligned
+    frame.grid_columnconfigure(0, weight=1, minsize=180)
+    frame.grid_columnconfigure(1, weight=1, minsize=180)
+    frame.grid_columnconfigure(2, weight=0)
 
     # --- PanedWindow for resizable panels ---
     paned = tk.PanedWindow(

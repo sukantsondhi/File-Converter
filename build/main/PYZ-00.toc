@@ -1,4 +1,4 @@
-('C:\\Users\\sukan\\GitHub\\Image to PDF\\build\\main\\PYZ-00.pyz',
+('C:\\Users\\sukan\\GitHub\\File-Converter\\build\\main\\PYZ-00.pyz',
  [('PIL',
    'c:\\Users\\sukan\\GitHub\\Image to '
    'PDF\\venv\\Lib\\site-packages\\PIL\\__init__.py',
