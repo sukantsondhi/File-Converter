@@ -1,5 +1,0 @@
-pillow
-pillow-heif
-pdf2image
-pymupdf
-tk
