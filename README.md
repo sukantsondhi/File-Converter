@@ -4,7 +4,7 @@ A simple GUI tool to convert images (PNG, JPG, HEIC) to PDF or other image forma
 
 ## Quick Start
 
-**[⬇️ Download the latest `.exe` file here](https://github.com/sukantsondhi/File-Converter/blob/main/main.exe) and run it—no installation required!**
+**[⬇️ Download the latest `.exe` file here](https://github.com/sukantsondhi/File-Converter/releases/tag/v1.0.0) and run it—no installation required!**
 
 > **Note:** If you want to view or modify the source code, switch to the `code` branch on this repository.
 
